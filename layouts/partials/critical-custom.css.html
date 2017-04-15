@@ -1,0 +1,134 @@
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<style>
+    /* Syntax highlighting theme */
+    pre .hljs-comment, pre .title {
+      color: #999999 !important;
+    }
+
+    pre .hljs-number, pre .hljs-string, pre .hljs-preprocessor, pre .hljs-built_in, pre .hljs-literal, pre .hljs-params, pre .hljs-constant {
+      color: #00bcd4 !important;
+    }
+
+    pre .hljs-keyword, pre .hljs-function {
+      color: #ff2e88 !important;
+    }
+
+    pre code {
+      display: block;
+      background: #2d2d2d !important;
+      color: #cccccc !important;
+      font-family: Menlo, Monaco, Consolas, monospace;
+      line-height: 1.5;
+      padding: 10px;
+    }
+
+    /* SVG icon font */
+    @font-face {
+      font-family: 'icomoon';
+      src:  url('/fonts/icomoon.eot?hk4sux');
+      src:  url('/fonts/icomoon.eot?hk4sux#iefix') format('embedded-opentype'),
+        url('/fonts/icomoon.ttf?hk4sux') format('truetype'),
+        url('/fonts/icomoon.woff?hk4sux') format('woff'),
+        url('/fonts/icomoon.svg?hk4sux#icomoon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    [class^="icon-"], [class*=" icon-"] {
+      /* use !important to prevent issues with browser extensions that change fonts */
+      font-family: 'icomoon' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .icon-twitter:before {
+      content: "\e900";
+    }
+    .icon-github:before {
+      content: "\e901";
+    }
+
+    /* Dirty hack to force scrollbars */
+    html,body {
+        height: 101%;
+    }
+
+    /* Main styles */
+    h1 {
+        color: white;
+    }
+    h2 {
+        color: white;
+    }
+    h3 {
+        color: white;
+    }
+    header h1 {
+        font-size: 1.2rem !important;
+        color: #FFAE00;
+    }
+    h1[itemprop="headline"] {
+        font-size: 1.2rem !important;
+        color: #FFAE00;
+    }
+    #hello {
+        font-size: 1.2rem !important;
+        color: #FFAE00;
+    }
+    a {
+        color: #00bcd4 !important;
+        border-bottom: 1px solid #00bcd4;
+    }
+    a.active {
+        background-color: #00bcd4;
+        color: black !important;
+    }
+    a:hover {
+        background-color: #00bcd4;
+        color: black !important;
+    }
+    nav {
+        background-color: #000;
+    }
+    nav a {
+        color: white !important;
+    }
+    nav a.active {
+        background-color: #00bcd4;
+        color: black !important;
+    }
+    nav a:hover {
+        background-color: #00bcd4;
+        color: black !important;
+    }
+    .social-link {
+        position: relative;
+        top: 2px;
+        border-bottom: 0;
+        font-size: 18px;
+    }
+    .social-link::after {
+        content: none !important;
+    }
+    .social-link:hover {
+        background-color: black !important;
+        color: #00bcd4 !important;
+    }
+    p em::before {
+        content: none !important;
+    }
+    p em::after {
+        content: none !important;
+    }
+    p em {
+        font-style: italic !important;
+        font-size: 14px !important;
+    }
+</style>

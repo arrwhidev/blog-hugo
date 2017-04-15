@@ -1,0 +1,27 @@
+languageCode = "en-us"
+title = "Arran White's Blog"
+baseURL = "https://arrwhidev.github.io"
+paginate = 10
+theme = "after-dark"
+enableRobotsTXT = true
+googleAnalytics = ""
+disqusShortname = ""
+SectionPagesMenu = "main"
+
+[social]
+  github = "arrwhidev"
+  twitter = "arranwhite_"
+
+[params]
+  description = ""
+  author = "Arran White"
+  hide_author = false
+  show_menu = true
+  powered_by = false
+  images = []
+
+[[menu.main]]
+  identifier = "home"
+  name = "Home"
+  url = "/"
+  weight = -100
