@@ -1,10 +1,16 @@
 #!/bin/bash
 
+# Clean up
+rm -rf public
+
 # Build content with hugo.
 /home/arran/tools/hugo_0.19_linux_amd64/hugo_0.19_linux_amd64
 
+# Copy to other repo
+cp -R public/* ../arrwhidev.github.com
+cd ../arrwhidev.github.com
+
 # Add changes
-cd public
 git add -A .
 
 # Default message if not specified.
@@ -14,7 +20,7 @@ if [ $# -eq 1 ]
 fi
 
 git commit -m "$msg"
-git push origin master
-cd ..
+git push
+cd ../blog-hugo
 
 echo "Deployed!"
