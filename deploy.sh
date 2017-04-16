@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Clear out public first.
+rm -rf public
+
 # Build content with hugo.
 /home/arran/tools/hugo_0.19_linux_amd64/hugo_0.19_linux_amd64
 
