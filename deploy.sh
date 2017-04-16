@@ -1,14 +1,11 @@
 #!/bin/bash
 
-# Clear out public first.
-rm -rf public
-
 # Build content with hugo.
 /home/arran/tools/hugo_0.19_linux_amd64/hugo_0.19_linux_amd64
 
 # Add changes
 cd public
-git add -A
+git add -A .
 
 # Default message if not specified.
 msg="Rebuilding site `date`"
