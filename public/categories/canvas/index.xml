@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Canvas on Arran White&#39;s Blog</title>
+    <link>https://arrwhidev.github.io/categories/canvas/index.xml</link>
+    <description>Recent content in Canvas on Arran White&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://arrwhidev.github.io/categories/canvas/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cellular Automata</title>
+      <link>https://arrwhidev.github.io/post/cellular-automata/</link>
+      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://arrwhidev.github.io/post/cellular-automata/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;Currently listening to: Chrono Trigger OST&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+
+&lt;p&gt;A cellular automaton is a grid of cells that is constructed by a series of time based rules based on neighboring cells.&lt;/p&gt;
+
+&lt;p&gt;Basically, the state of each cell is determined by the state of the surrounding cells.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s an example;&lt;/p&gt;
+
+&lt;script src=&#34;https://cdn.rawgit.com/arrwhidev/cellular-automata/ec6c569b70f4e83e008c56535ab64a9a98d0bcaa/wolfram.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+    var w = {};
+    window.onload = function() {
+        w = wolfram(&#39;canvas&#39;, &#39;#00bcd4&#39;);
+    }
+&lt;/script&gt;
+&lt;canvas id=&#34;canvas&#34; width=&#34;800&#34; height=&#34;320&#34; style=&#34;width: 100%&#34;&gt;&lt;/canvas&gt;
+
+
+
+&lt;p&gt;Looks cool right?!&lt;/p&gt;
+
+&lt;p&gt;That is a real JavaScript/Canvas implementation of &lt;a href=&#34;http://atlas.wolfram.com/01/01/150/&#34;&gt;Rule 150&lt;/a&gt;. The code can actually support any of the rules, &lt;a href=&#34;https://github.com/arrwhidev/cellular-automata/blob/master/wolfram.js&#34;&gt;take a look&lt;/a&gt; - it&amp;rsquo;s pretty flexible! These rules do not change over time. Each cell is computed only once, based on an initial state, working left to right, top to bottom.&lt;/p&gt;
+
+&lt;p&gt;The initial state is the first row. In this example every cell is OFF except the middle cell, which is ON.&lt;/p&gt;
+
+&lt;p&gt;What about a random initial state?&lt;/p&gt;
+
+&lt;p&gt;&lt;a onclick=&#34;w.toggleRandom()&#34;&gt;Click me to randomize!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;rules&#34;&gt;Rules&lt;/h2&gt;
+
+&lt;p&gt;Each rule comprises of 4 nodes, three across the top, one in the bottom middle.&lt;/p&gt;
+
+&lt;p&gt;The bottom cell represents the state of the cell that the rule is describing.&lt;/p&gt;
+
+&lt;p&gt;The top row represent the absolute position and state of neighboring cells.&lt;/p&gt;
+
+&lt;p&gt;These are the states for Rule 150;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://atlas.wolfram.com/01/01/150/01_01_4_150.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the first rule described;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;if the cell directly above and to the left is ON&lt;/li&gt;
+&lt;li&gt;and the cell directly above is ON&lt;/li&gt;
+&lt;li&gt;and the cell directly above and to the right is ON&lt;/li&gt;
+&lt;li&gt;then the cell should be ON&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And the second rule;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;if the cell directly above and to the left is ON&lt;/li&gt;
+&lt;li&gt;and the cell directly above is ON&lt;/li&gt;
+&lt;li&gt;and the cell directly above and to the right is OFF&lt;/li&gt;
+&lt;li&gt;then the cell should be OFF&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A function to describe a rule may look something like;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function rule150(grid, x, y) {
+    if (grid[y-1][x-1] === true &amp;amp;&amp;amp;
+        grid[y-1][x] === true &amp;amp;&amp;amp;
+        grid[y-1][x+1] === false) {
+        grid[y][x] = false;
+        return;
+    }
+    // more rules...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;rsquo;s it (at a real basic level).&lt;/p&gt;
+
+&lt;h2 id=&#34;what-s-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+
+&lt;p&gt;As fascinating as static celluar automaton are, things that move are way cooler!&lt;/p&gt;
+
+&lt;p&gt;My next post will cover this. Specifically, Conway&amp;rsquo;s Game of Life.&lt;/p&gt;
+
+&lt;h2 id=&#34;footnote&#34;&gt;Footnote&lt;/h2&gt;
+
+&lt;p&gt;I discovered this topic by watching &lt;a href=&#34;https://youtu.be/bc-fVdbjAwk&#34;&gt;this video&lt;/a&gt; on the funfunfunction YouTube channel.&lt;/p&gt;
+
+&lt;p&gt;You should definitely subscribe because he produces great content!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
