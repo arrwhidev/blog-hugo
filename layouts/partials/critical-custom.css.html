@@ -55,6 +55,12 @@
       content: "\e901";
     }
 
+    /* Force header to always be on top of experiements. */
+    header {
+        z-index: 9999 !important;
+        position: relative;
+    }
+
     /* Dirty hack to force scrollbars */
     html,body {
         height: 101%;
@@ -93,9 +99,6 @@
     a:hover {
         background-color: #00bcd4;
         color: black !important;
-    }
-    nav {
-        background-color: #000;
     }
     nav a {
         color: white !important;
