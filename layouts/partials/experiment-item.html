@@ -1,0 +1,10 @@
+<article itemscope itemtype="http://schema.org/CreativeWork">
+  <header>
+    <h2 itemprop="headline">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+  </header>
+  {{ if .Description }}
+    <blockquote itemprop="about">{{ .Description }}</blockquote>
+  {{ end }}
+</article>
