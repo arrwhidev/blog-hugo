@@ -4,7 +4,8 @@
 rm -rf public
 
 # Build content with hugo.
-/home/arran/tools/hugo_0.19_linux_amd64/hugo_0.19_linux_amd64
+# /home/arran/tools/hugo_0.19_linux_amd64/hugo_0.19_linux_amd64
+hugo
 
 # Copy to other repo
 cp -R public/* ../arrwhidev.github.com
